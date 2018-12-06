@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="kr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>버튼 만들기 첫 실습</title>
+    <style>
+      *{margin: 0; padding: 0;}
+      .div1{height: 150px; background-color: red;}
+      .div1 #bts{width: 50px; height: 100px;
+      background-color: black; margin: 25px 50px 0 25px;
+      float: left;}
+      .div1 #bts b{color: white; margin-top: 20px;
+      display: block;}
+      #bt_test1{width: 50px; height: 100px;
+      background-color: pink; margin: 25px 50px 0 25px;
+      float: left;}
+      #bt_test1 b{color: red; margin-top: 20px;
+      display: block;}
+      #bt_test2{width: 50px; height: 100px;
+      background-color: yellow; margin: 25px 50px 0 25px;
+      float: left;}
+      #bt_test2 b{color: orange; margin-top: 20px;
+      display: block;}
+      .div2{height: 300px; width: 15%;
+       background-color: yellow; float: left;}
+      .ccc1{height: 300px; width: 15%;
+       background-color: orange; float: left;}
+      .ccc2{height: 300px; width: 15%;
+       background-color: green; float: left;}
+      .div3{height: 300px; width: 85%;
+      background-color: blue; float: left;}
+      #cc{margin-top: 50px; float: left; color: gray;}
+    </style>
+  </head>
+  <body>
+    <div class="div1">
+      <div id="bts">
+        <b id="bt1">버튼1</b>
+        <b id="bt2">버튼2</b>
+      </div>
+      <div id="textbox">
+
+      </div>
+    </div>
+    <div class="div2">
+      <!-- input 버튼을 만드는 태그 button,
+      reset,submit,image -->
+      <input type="button" id="inp1" value="주황색">
+      <input type="button" id="inp2" value="녹색">
+    </div>
+    <div class="div3">
+
+    </div>
+    <script>
+    // <b id="bt1">버튼1</b>
+    // 아이디를 사용해 문서 객체 선택
+      var div_bt1 = document.getElementById('bt1');
+    // <b id="bt2">버튼2</b>
+      var div_bt2 = document.getElementById('bt2');
+      var bts = document.getElementById('bts');
+
+      div_bt1.addEventListener("click",function () {
+        bts.id="bt_test1";
+      });
+
+      div_bt2.addEventListener("click", function () {
+        bts.id="bt_test2";
+      });
+      //첫번째 버튼
+      var inp1 = document.getElementById('inp1');
+      var inp2 = document.getElementById('inp2');
+      var bts2 = document.getElementsByClassName("div2")[0];
+
+      inp1.addEventListener("mouseover",function () {
+        bts2.className="ccc1";
+      });
+
+      inp2.addEventListener("mouseover",function () {
+        bts2.className="ccc2";
+      });
+
+      var textbox = document.getElementById('textbox');
+      //bt2의 정보를 가지고 있는 변수
+      div_bt2.addEventListener("click",function () {
+        textbox.innerHTML=
+        "<h1 id='cc'>자바스크립트에 오신걸 환영합니다!</h>"
+      });
+
+    </script>
+  </body>
+</html>
