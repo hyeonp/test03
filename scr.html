@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="kr" dir="lt">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      *{margin: 0; padding: 0;}
+      .total{width: 800px; margin: 0 auto;}
+      article{background-color: lightpink; height: 60px; position: relative;}
+      section{background-color: lightyellow; height: 60px; position: relative;}
+      nav{background-color: skyblue; height: 60px; position: relative;}
+      .h1{position: absolute; left: 50%; top: 50%; transform: translateX(-50%)translateY(-50%);}
+      .div{height: 100px; background-color: violet; display: none;}
+    </style>
+    <script>
+    window.onload = function(){
+    var article = document.getElementsByTagName('article')[0];
+    var section = document.getElementsByTagName('section')[0];
+    var nav = document.getElementsByTagName('nav')[0];
+
+    var div1 = document.getElementById('div1');
+    var div2 = document.getElementById('div2');
+    var div3 = document.getElementById('div3');
+
+    var count1 = 0;
+    var count2 = 0;
+    var count3 = 0;
+
+
+    article.addEventListener('click', function () {
+      if(count1 == 0){
+        div1.style.display = 'block';
+        count1 = 1;
+      }else{
+        div1.style.display = 'none';
+        count1 = 0;
+      }
+    })
+    section.addEventListener('click', function () {
+      if(count2 == 0){
+        div2.style.display = 'block';
+        count2 = 1;
+      }else{
+        div2.style.display = 'none';
+        count2 = 0;
+      }
+    })
+    nav.addEventListener('click', function () {
+      if(count3 == 0){
+        div3.style.display = 'block';
+        count3 = 1;
+      }else{
+        div3.style.display = 'none';
+        count3 = 0;
+      }
+    })
+  }
+    </script>
+
+  </head>
+  <body>
+    <!-- 시맨틱 태그 <article>
+    본문과 연관이 되어 있지만, 독립적인 콘텐츠를 담는 영역이다. <article>은 웹 페이지의 본질을 훼손하지 않는 내용들을 담는데 주로 사용된다.
+      보조적인 기사, 블로그 포스트, 댓글이나 기타 독립적인 내용을 담는 영역으로 사용하면 된다. <article>에 담는 내용이 많은 경우 <section>
+        으로 나누어 담을 수 있다.
+      </section>
+
+      </article>
+
+    </article>
+    </article> -->
+
+    <div class="total">
+          <article>
+            <div class="div" id="div1" ></div>
+            <h1 class="h1">스크립트 기초1</h1>
+          </article>
+        <div class="div" id="div2"></div>
+          <section>
+            <h1 class="h1">스크립트 기초2</h1>
+          </section>
+        <div class="div" id="div3"></div>
+          <nav>
+            <h1 class="h1">스크립트 기초3</h1>
+          </nav>
+      </div>
+
+
+
+
+    </div>
+  </body>
+</html>
